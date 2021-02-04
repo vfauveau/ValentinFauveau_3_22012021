@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(Roboto-Regular.ttf);
+    font-family: Shrikhand-Regular;
+    src: url(Shrikhand-Regular.ttf);
+  }
+
+
+@mixin flexcenter {
+    display: flex ;
+    justify-content: center ;
+    align-self: center;
+}
+/* Variables */ 
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$fontregular: Roboto-Regular;
+$fontimportant: Shrikhand-Regular;
+$background-color:rgb(245, 245, 245);
