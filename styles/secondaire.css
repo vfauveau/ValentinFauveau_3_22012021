@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("variables.scss");
 @font-face {
   font-family: Roboto-Regular;
   src: url(Roboto-Regular.ttf);
@@ -100,16 +99,14 @@ article.Article__container {
   cursor: pointer;
 }
 
+.fa-heart::before {
+  font-size: 24px;
+}
+
 .fa-check-circle {
   color: white;
   background-color: #99E2D0;
   font-size: 20px;
-}
-
-.Article__Price {
-  text-overflow: ellipsis;
-  white-space: wrap;
-  overflow: hidden;
 }
 
 .Article__titre {

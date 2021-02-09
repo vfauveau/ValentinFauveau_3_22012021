@@ -1,0 +1,13 @@
+
+@media (min-width : 600px) and (max-width : 1048px){
+    img{width: 100%;
+    height: 450px;}
+}
+@media (min-width : 800px) and (max-width : 1048px){
+    figure{margin: 5%;}
+}
+
+@media (min-width : 1049px) {
+    article{display : flex ; justify-content: space-between; flex-direction: row; flex-wrap: nowrap;}
+    
+}
