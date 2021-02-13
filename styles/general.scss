@@ -11,7 +11,7 @@
     justify-content: center ;
     align-self: center;
 }
-/* Variables */ 
+/* Variables */
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
@@ -31,14 +31,14 @@ body{margin : 0 ;
     flex-direction: column;
     font-family: $fontregular, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 
-    /* Header */ 
+    /* Header */
 }
 header{@include flexcenter ;
     margin-top: 0.5em ;
 }
 .headerLogo{
-    width: auto ; 
-    height : auto ; 
+    width: auto ;
+    height : auto ;
     width : 100%;
     margin : 1em 0;
 }
@@ -54,22 +54,24 @@ header{@include flexcenter ;
 
 .sousheader__container{background-color :$background-color ;padding-bottom: 2em;}
 .sousheader__container--titre{font-family: $fontregular, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-display: flex ; 
-flex-wrap: wrap; 
+display: flex ;
+flex-wrap: wrap;
 font-size: 24px;
 justify-content: center ;
 text-align: center;
-padding-top:1em;}
+padding-top:1em;
+margin-top: 0;}
 
 .sousheader-container__texte{@include flexcenter ;
      flex-wrap : wrap;
     padding : 0 2rem ;
     text-align: center;}
 
-/* Nav */ 
+/* Nav */
 nav{font-weight: bold;
 font-family: $fontregular;
-padding : 0 5% ; }
+padding : 0 5% ;
+margin-bottom: 2em; }
 
 .nav--title{font-family: $fontregular, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 text-align: left;
@@ -78,45 +80,52 @@ margin-top : 2em ;
 margin-bottom : 1em ;
 font-size : 24px ;}
 
-.nav__listContainer{
-    margin : 0 ;
-    padding : 0;
-    @include flexcenter ;
+.wrap__elementsnav{display: flex;
     flex-direction: column;
-    width: 100%;
-    margin: 0}
-
-
-.nav__list:hover + .ligneliste{background-color: $secondary-color;
-    cursor: pointer;}
-.ligneliste{
-        font-weight: bold ;
-        font-family: $fontregular, 'Arial';
-        padding :2em 3em ;
-        padding-left: 0;
-        background-color: rgb(230, 230, 230);
-        border-radius: 1em;
-        cursor: pointer;
-        &>strong{
-            background-color: $primary-color;
-            border: 1px;
-            border-radius: 50%;
-            padding: 0.5em;
-            color: white;
-            margin-left: -10px;
-            margin-right: 15%;
-        }
-
 }
 
-.nav__Line{font-weight: 100;
+/* Elements du menu "Fonctionnement" */
+.nav__wrap__line{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em ;
+    background-color: $background-color; padding : 1.2rem 1.5rem ;
+    border-radius: 3em;
+    transition: all 0.7s ease-out;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);
+    &:hover,:focus{
+        background-color: #a262f127;
+        cursor: pointer;
+        & i {
+            color: $primary-color;
+        }
+    }
+    & p {padding-right: 10%;}
+    & > *{margin-left: -25px;}
+    & > div{
+        background-color: #9356DC;
+        border-radius: 50%;
+        line-height: 12px;
+        color: white;
+        width: 12px;
+        height: 12px;
+        padding: 10px;
+        text-align: center;
+        font: 14px $fontregular bold;
+    }
+    & i {
+        color: grey;
+    }
+        & p {
+            color: black;
+    }
 }
 .fa-heart{padding-right: 1em ; font-size: 20px ; color : rgba(17, 17, 19, 0.863);
 }
 
-i{
-    @include flexcenter;
-    color : $primary-color ;}
 h3{
     @include flexcenter ;
     margin : 0;
@@ -143,11 +152,11 @@ h3{
             }
         }
 
-        
+
 .nav__Container{display : flex ; justify-content : space-between ; align-items : center ;}
 .containers--restaurants{@include flexcenter; width: 90%;}
 ul{list-style:none;
-    padding-inline-start: 0;}
+}
 
 img {
     width: 340px;
@@ -155,10 +164,10 @@ img {
     height: 200px;
     border-top-left-radius:1em;
     border-top-right-radius: 1em;
-    
+
 }
 
-.figureText{display: inline-flex ; 
+.figureText{display: inline-flex ;
     justify-content: space-between ;}
 
 a {text-decoration: none;}
@@ -179,8 +188,10 @@ box-shadow: 1px 1px 6px rgb(0, 0, 0);
 }
 
 figcaption{display: flex;}
-figcaption>div{font: 1em ; font-weight: bold;
-    padding-left: 0.5em; padding-bottom: 0.4em;
+figcaption>div{font: 1em ;
+    font-weight: bold;
+    padding-left: 0.5em;
+    padding-bottom: 0.4em;
     padding-top: 0.5em;
     text-decoration: none;
     color: black;
@@ -207,12 +218,16 @@ figcaption>div{font: 1em ; font-weight: bold;
     text-shadow: 2px 1px 2px rgba(0,0,0,0.6);
 }
 
-footer{background-color : rgba(17, 17, 19, 0.863);
-width: 100%;
-margin-bottom: 0;
-height : auto ;}
+footer{
+    background-color : rgba(17, 17, 19, 0.863);
+    width: 100%;
+    margin-bottom: 0;
+    height : auto ;
+}
 
-.fa-utensils{color: white;margin-right: 5px;}
+.fa-utensils{
+    color: white;
+    margin-right: 5px;}
 .fa-hands-helping{color: white;
     margin-right: 5px;}
 .listcontainerFooter{margin-bottom:0;
@@ -220,4 +235,5 @@ height : auto ;}
     padding-bottom: 5%;}
 .elementListFooter{
     color : white ;
-    padding : 0.3em 0 ;}
+    padding : 0.3em 0 ;
+    width: 70%;}

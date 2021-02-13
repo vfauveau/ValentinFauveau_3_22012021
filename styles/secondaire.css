@@ -19,9 +19,17 @@ html, body {
   height: 100%;
 }
 
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 .button--Order {
   background-color: #9356DC;
-  padding: 1em 0em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,7 +39,6 @@ html, body {
   -ms-flex-item-align: center;
       align-self: center;
   border-radius: 10em;
-  width: 60%;
   margin-left: auto;
   margin-right: auto;
   font-weight: bold;
@@ -62,6 +69,7 @@ h5 {
 .banner {
   position: relative;
   z-index: -1;
+  margin-bottom: -45px;
 }
 
 article {
@@ -92,11 +100,8 @@ article.Article__container {
 
 .fa-heart {
   padding-right: 1em;
-}
-
-.fa-heart:hover {
-  fill: #9356DC;
   cursor: pointer;
+  padding-top: 0.5rem;
 }
 
 .fa-heart::before {
@@ -122,6 +127,10 @@ article.Article__container {
   font-weight: 100;
 }
 
+.Article__Price {
+  position: relative;
+}
+
 /* Animation loading spinner */
 .loadingSpinner {
   width: 100px;
@@ -137,17 +146,29 @@ article.Article__container {
   top: 0;
   bottom: 0;
   z-index: 5;
-  -webkit-animation: spin linear 4s forwards, opacity1 0.4s forwards 3.8s;
-          animation: spin linear 4s forwards, opacity1 0.4s forwards 3.8s;
+  pointer-events: none;
+  -webkit-animation: spin linear 2s forwards, opacity1 0.4s forwards 2s;
+          animation: spin linear 2s forwards, opacity1 0.4s forwards 2s;
 }
 
-/* Animation Opacité de la page loading spinner */
-.opacity {
+/* Page spinner */
+.wrapSpinner {
+  display: block;
+  background-color: whitesmoke;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  z-index: 4;
+  -webkit-animation: disparait 0s forwards 2s;
+          animation: disparait 0s forwards 2s;
+}
+
+ul.Article__listContainer {
+  padding-left: 0;
+  -webkit-animation: none;
+          animation: none;
 }
 
 ul.Article__listContainer > li {
@@ -156,10 +177,6 @@ ul.Article__listContainer > li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   background-color: white;
   border-radius: 1em;
   margin: 1em 5%;
@@ -171,19 +188,18 @@ li:hover {
   cursor: pointer;
 }
 
-li:hover .Article__left {
-  width: 80%;
-}
-
 li:hover .Article__right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: slidein ease-in-out 0.5s forwards;
-          animation: slidein ease-in-out 0.5s forwards;
+  -webkit-animation: slidein ease-in-out 0.7s forwards;
+          animation: slidein ease-in-out 0.7s forwards;
 }
 
 li:hover .Article__right > p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-animation: rotationpls 0.8s forwards;
           animation: rotationpls 0.8s forwards;
 }
@@ -211,17 +227,36 @@ li:hover .Article__right > p {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  -webkit-animation: none;
+          animation: none;
 }
 
-div.Article__left > p {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.Article__left__ligne {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-bottom: 2em;
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-animation: none;
+          animation: none;
+}
+
+.Article__left__ligne > p {
+  margin: 0;
+  padding: 0;
+  -webkit-animation: none;
+          animation: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: none;
 }
 
 .Article__right {
@@ -241,6 +276,8 @@ div.Article__left > p {
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
   overflow: hidden;
+  -webkit-animation: none;
+          animation: none;
 }
 
 /* KEYFRAMES */
@@ -274,28 +311,21 @@ div.Article__left > p {
 @-webkit-keyframes slidein {
   from {
     margin-left: 100%;
-    width: 20%;
-    display: none;
+    width: 0%;
   }
   to {
     margin-left: 0%;
     width: 20%;
-    display: -webkit-box;
-    display: flex;
   }
 }
 @keyframes slidein {
   from {
     margin-left: 100%;
-    width: 20%;
-    display: none;
+    width: 0%;
   }
   to {
     margin-left: 0%;
     width: 20%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
 }
 
@@ -325,65 +355,93 @@ div.Article__left > p {
   }
 }
 
+/* Loading Spinner */
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(3turn);
-            transform: rotate(3turn);
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
   }
 }
-
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(3turn);
-            transform: rotate(3turn);
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
   }
 }
 
 @-webkit-keyframes opacity1 {
   from {
     opacity: 1;
+    display: block;
   }
   to {
     opacity: 0;
+    display: none;
   }
 }
 
 @keyframes opacity1 {
   from {
     opacity: 1;
+    display: block;
   }
   to {
     opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes disparait {
+  from {
+    width: 100%;
+    height: 100%;
+  }
+  to {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+}
+
+@keyframes disparait {
+  from {
+    width: 100%;
+    height: 100%;
+  }
+  to {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
 }
 
 /* Elements liste */
 .list__element1 {
   opacity: 0;
-  -webkit-animation: apparition 2s forwards;
-          animation: apparition 2s forwards;
+  -webkit-animation: apparition 2s forwards 2s;
+          animation: apparition 2s forwards 2s;
 }
 
 .list__element2 {
   opacity: 0;
   -webkit-animation: apparition 2s forwards;
           animation: apparition 2s forwards;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 
 .list__element3 {
   opacity: 0;
   -webkit-animation: apparition 2s forwards;
           animation: apparition 2s forwards;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
 }

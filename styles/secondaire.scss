@@ -11,7 +11,7 @@
     justify-content: center ;
     align-self: center;
 }
-/* Variables */ 
+/* Variables */
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
@@ -21,19 +21,19 @@ $background-color:rgb(245, 245, 245);
 
 
 img{width:100%;
-    height: auto ; 
+    height: auto ;
     border-radius: 0;}
-    html, body{
+html, body{
         margin :0;
         padding: 0;
         height: 100%;}
 
+body{display: flex; justify-content: flex-start;}
+
 .button--Order {
     background-color: $primary-color;
-    padding : 1em 0em ; 
     @include flexcenter ;
     border-radius: 10em;
-    width :60%;
     margin-left : auto ;
     margin-right : auto ;
     font-weight: bold ;
@@ -51,17 +51,16 @@ img{width:100%;
 .imgArticle{margin-bottom: -50px;}
 h5{font-size: 18px;
     margin : 0.2em 0;}
+.banner{position : relative ;
+    z-index: -1 ; margin-bottom: -45px;}
 
-.banner{position : relative ; 
-    z-index: -1 ;}
-    
 article{@include flexcenter ;
     border-top-left-radius: 3em ;
-    border-top-right-radius: 3em; 
+    border-top-right-radius: 3em;
     flex-direction: column;
     width: 100%;
     padding: 0;
-    background-color: rgb(223, 223, 223) ; 
+    background-color: rgb(223, 223, 223) ;
     z-index: 1;
     &.Article__container{border-top-left-radius: 0 ;
     border-top-right-radius: 0 ;
@@ -69,11 +68,10 @@ article{@include flexcenter ;
 }
 
 .fa-heart{padding-right: 1em ;
-    &:hover{fill : $primary-color ;
         cursor: pointer;
+        padding-top: 0.5rem;
 
     }
-}
 
 .fa-heart::before{font-size: 24px;}
 .fa-check-circle{color : white;
@@ -82,56 +80,66 @@ article{@include flexcenter ;
     }
 
 .Article__titre{
-    display : flex ; 
+    display : flex ;
     justify-content : space-between ;
-    font-family: $fontimportant; 
-    font-size: 30px; 
+    font-family: $fontimportant;
+    font-size: 30px;
     padding-left: 5%;
     font-weight:100;
 }
 
+.Article__Price{position: relative;}
 /* Animation loading spinner */
 .loadingSpinner{
-    width : 100px ; 
+    width : 100px ;
     height: 100px ;
     border: 12px solid $primary-color;
-    border-top: 8px solid transparent; 
+    border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-radius: 50%; 
-    margin: auto; 
+    border-radius: 50%;
+    margin: auto;
     position : absolute ;
     left : 0 ; right : 0 ; top : 0 ; bottom : 0 ;
     z-index: 5;
-    animation: spin linear 4s forwards, opacity1 0.4s forwards 3.8s}
+    pointer-events: none;
+    animation: spin linear 2s forwards, opacity1 0.4s forwards 2s;}
 
-/* Animation Opacité de la page loading spinner */ 
+/* Page spinner */
+.wrapSpinner{
+    display : block ;
+    background-color: $background-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 4;
+    animation : disparait 0s forwards 2s;
+}
 
-.opacity{position : absolute ;
-    left : 0 ; right : 0 ; top : 0 ; bottom : 0 ;}
-ul.Article__listContainer > li {
+ul.Article__listContainer{padding-left: 0;     animation: none;
+    & > li {
     width: 90% ;
     height: 70px;
     display : flex ;
-    flex-direction: row;
-    background-color: white ; 
+    background-color: white ;
     border-radius: 1em ;
     margin : 1em 5% ;
     box-shadow: 8px 7px 28px -3px rgba(0,0,0,0.49);
     }
+}
 
 
 li:hover{cursor:pointer;
-    &  .Article__left{width:80%;
-    }
-    &  .Article__right{display: flex; animation: slidein ease-in-out 0.5s forwards;
+    &  .Article__right{display: flex; animation: slidein ease-in-out 0.7s forwards;
     }
     &  .Article__right > p {
+        display: flex;
         animation: rotationpls 0.8s forwards;
     }
 
 
 }
-
 
 .Article__menu__titre{font-size: 22px;
     font-weight:none;
@@ -149,13 +157,28 @@ li:hover{cursor:pointer;
     white-space: nowrap ;
     text-overflow: ellipsis;
     overflow: hidden;
-    }
+    animation: none;
+}
 
-div.Article__left > p{
-    display : flex ; 
-    justify-content : space-between ;
-    padding-bottom: 2em;
+
+
+.Article__left__ligne{
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: space-between;
     margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    animation: none;
+        & > p {
+            margin: 0;
+            padding: 0;
+            animation: none;
+            text-overflow: ellipsis;
+            white-space: nowrap ;
+            overflow: hidden;
+            animation: none;
+        }
     }
 
 .Article__right{
@@ -168,8 +191,10 @@ div.Article__left > p{
     border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
     overflow: hidden;
-    
+    animation: none;
+
 }
+
 
 /* KEYFRAMES */
 /* Apparition Menu */
@@ -188,16 +213,15 @@ div.Article__left > p{
 @keyframes slidein {
     from {
       margin-left: 100%;
-      width :20%;
-      display: none;
+      width :0%;
     }
-  
+
     to {
       margin-left: 0%;
       width: 20%;
-      display: flex;
     }
   }
+
 /* Rotation item */
 @keyframes rotationpls {
     from {
@@ -208,22 +232,39 @@ div.Article__left > p{
     to {
         transform: rotate(-360deg);
         margin-left: 0%;
-
     }
 }
 
+/* Loading Spinner */
 @keyframes spin {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(3turn);
+    0% {transform: rotate(0deg);
+    }
+    100% {transform: rotate(1turn);
     }
 }
 
 @keyframes opacity1{
     from {opacity: 1;
+        display: block;
     }
-    to {opacity: 0;}
+    to {opacity: 0;
+        display: none;}
 }
+
+@keyframes disparait {
+    from {width : 100% ; height : 100% ;}
+    to {width : 1px ; height : 1px; overflow : hidden ;}
+  }
+
 /* Elements liste */
-.list__element1{opacity:0; animation: apparition 2s forwards;}
-.list__element2{opacity : 0 ;animation: apparition 2s forwards; animation-delay: 2s;}
-.list__element3{opacity : 0 ; animation: apparition 2s forwards; animation-delay: 4s;}
+.list__element1{
+    opacity:0;
+    animation: apparition 2s forwards 2s;}
+.list__element2{
+    opacity : 0 ;
+    animation: apparition 2s forwards;
+    animation-delay: 3s;}
+.list__element3{
+    opacity : 0 ;
+    animation: apparition 2s forwards;
+    animation-delay: 5s;}
