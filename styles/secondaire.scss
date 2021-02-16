@@ -40,6 +40,7 @@ body{display: flex; justify-content: flex-start;}
     color : white ;
     box-shadow: 1px 1px 6px black;
     margin-bottom: 2em ;
+    margin-top: 2em;
         &:hover
             {box-shadow: 2px 2px 8px black;
             background-color: $primary-color;
@@ -50,7 +51,8 @@ body{display: flex; justify-content: flex-start;}
 
 .imgArticle{margin-bottom: -50px;}
 h5{font-size: 18px;
-    margin : 0.2em 0;}
+    margin : 0.2em 0;
+    display: inline-flex;}
 .banner{position : relative ;
     z-index: -1 ; margin-bottom: -45px;}
 
@@ -67,13 +69,8 @@ article{@include flexcenter ;
     }
 }
 
-.fa-heart{padding-right: 1em ;
-        cursor: pointer;
-        padding-top: 0.5rem;
 
-    }
 
-.fa-heart::before{font-size: 24px;}
 .fa-check-circle{color : white;
     background-color :  $tertiary-color ;
     font-size: 20px;
@@ -88,36 +85,11 @@ article{@include flexcenter ;
     font-weight:100;
 }
 
-.Article__Price{position: relative;}
-/* Animation loading spinner */
-.loadingSpinner{
-    width : 100px ;
-    height: 100px ;
-    border: 12px solid $primary-color;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-radius: 50%;
-    margin: auto;
-    position : absolute ;
-    left : 0 ; right : 0 ; top : 0 ; bottom : 0 ;
-    z-index: 5;
-    pointer-events: none;
-    animation: spin linear 2s forwards, opacity1 0.4s forwards 2s;}
 
-/* Page spinner */
-.wrapSpinner{
-    display : block ;
-    background-color: $background-color;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 4;
-    animation : disparait 0s forwards 2s;
-}
 
-ul.Article__listContainer{padding-left: 0;     animation: none;
+ul.Article__listContainer{
+    padding-left: 0;
+    animation: none;
     & > li {
     width: 90% ;
     height: 70px;
@@ -126,18 +98,27 @@ ul.Article__listContainer{padding-left: 0;     animation: none;
     border-radius: 1em ;
     margin : 1em 5% ;
     box-shadow: 8px 7px 28px -3px rgba(0,0,0,0.49);
-    }
+    flex: 1;
+    position: relative;}
 }
 
+.Article__Price{display: flex;
+    justify-content: center;
+    align-items: flex-end;font-weight: bold;}
 
-li:hover{cursor:pointer;
-    &  .Article__right{display: flex; animation: slidein ease-in-out 0.7s forwards;
+li:hover{
+    cursor:pointer;
+    &  .Article__right{
+        display: flex;
+        width: 20%;
+        animation: slidein 0.8s;
     }
     &  .Article__right > p {
         display: flex;
-        animation: rotationpls 0.8s forwards;
+        animation: rotationC 0.8s forwards;
     }
-
+    & .Article__left{width: 80%; transition: 0.8s ease-in;}
+    & .Article__left__ligne{width: 100%; transition: 0.8s;}
 
 }
 
@@ -164,12 +145,9 @@ li:hover{cursor:pointer;
 
 .Article__left__ligne{
     display: inline-flex;
-    align-items: flex-start;
     justify-content: space-between;
     margin: 0;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    animation: none;
+
         & > p {
             margin: 0;
             padding: 0;
@@ -185,13 +163,14 @@ li:hover{cursor:pointer;
     display : none ;
     justify-content : center ;
     align-items: center ;
-    width : 20%;
     background-color: $tertiary-color ;
     flex-direction:column;
     border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
     overflow: hidden;
-    animation: none;
+    height: auto;
+    width: 0%;
+    transition: 0.5s;
 
 }
 
@@ -212,18 +191,17 @@ li:hover{cursor:pointer;
 /* Apparition élément validation */
 @keyframes slidein {
     from {
-      margin-left: 100%;
       width :0%;
     }
 
     to {
-      margin-left: 0%;
+
       width: 20%;
     }
   }
 
 /* Rotation item */
-@keyframes rotationpls {
+@keyframes rotationC {
     from {
         transform: rotate(0deg);
         margin-left: 100%;
@@ -234,27 +212,6 @@ li:hover{cursor:pointer;
         margin-left: 0%;
     }
 }
-
-/* Loading Spinner */
-@keyframes spin {
-    0% {transform: rotate(0deg);
-    }
-    100% {transform: rotate(1turn);
-    }
-}
-
-@keyframes opacity1{
-    from {opacity: 1;
-        display: block;
-    }
-    to {opacity: 0;
-        display: none;}
-}
-
-@keyframes disparait {
-    from {width : 100% ; height : 100% ;}
-    to {width : 1px ; height : 1px; overflow : hidden ;}
-  }
 
 /* Elements liste */
 .list__element1{
@@ -268,3 +225,5 @@ li:hover{cursor:pointer;
     opacity : 0 ;
     animation: apparition 2s forwards;
     animation-delay: 5s;}
+
+

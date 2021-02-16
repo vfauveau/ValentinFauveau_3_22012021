@@ -84,6 +84,9 @@ header {
 .sousheader__container {
   background-color: whitesmoke;
   padding-bottom: 2em;
+  box-shadow: 3px 7px 5px -4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 3px 7px 5px -4px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 3px 7px 5px -4px rgba(0, 0, 0, 0.25);
 }
 
 .sousheader__container--titre {
@@ -142,6 +145,9 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* Elements du menu "Fonctionnement" */
@@ -203,10 +209,83 @@ nav {
   color: black;
 }
 
+/* Icones Coeur & Fill */
+/* Animation remplissage du coeur on hover */
+.Article__titre__wrap {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.heart-wrapper {
+  position: relative;
+  width: 16px;
+}
+
+.heart-wrapper:hover {
+  cursor: pointer;
+}
+
+.heart-wrapper:focus {
+  cursor: pointer;
+}
+
+.icon-filled {
+  padding: 0;
+  margin: 0;
+}
+
 .fa-heart {
-  padding-right: 1em;
-  font-size: 20px;
-  color: rgba(17, 17, 19, 0.863);
+  background-color: #FF79DA;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 1.6px;
+  left: 2px;
+  height: 0;
+  overflow: hidden;
+  z-index: 2;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.fa-heart-o {
+  color: rgba(175, 173, 173, 0.822);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.64);
+}
+
+.fa-heart-o::before {
+  font-size: 24px;
+  z-index: 3;
+  position: relative;
+}
+
+.heart-wrapper .heart-fill-hover:hover .fa-heart {
+  height: 100%;
+  font-size: 22px;
+}
+
+.heart-wrapper .heart-fill-hover:focus .fa-heart {
+  height: 100%;
+  font-size: 22px;
+}
+
+.heart-fill-hover:hover .fa-heart-o {
+  color: #FF79DA;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  font-size: 22px;
+}
+
+.heart-wrapper {
+  padding-right: 20px;
 }
 
 h3 {
@@ -231,27 +310,32 @@ h3 {
           justify-content: center;
   -ms-flex-item-align: center;
       align-self: center;
-  padding: 1.2em 0;
-  background-color: #FF79DA;
+  padding: 1.2em 1em;
+  background-color: #9356DC;
   border-radius: 10em;
   width: 55%;
   margin-left: auto;
   margin-right: auto;
   font-weight: bold;
   color: white;
-  -webkit-box-shadow: 1px 1px 6px #fffefe;
-          box-shadow: 1px 1px 6px #fffefe;
+  background: #ff79da;
+  background: linear-gradient(160deg, #ff79da 10%, #9356dc 90%);
+  background: -moz-linear-gradient(160deg, #ff79da 10%, #9356dc 90%);
+  -webkit-box-shadow: 1px 1px 4px black;
+          box-shadow: 1px 1px 4px black;
 }
 
 .button:hover {
-  -webkit-box-shadow: 2px 2px 6px black;
-          box-shadow: 2px 2px 6px black;
-  background-color: #fa7fd7;
+  -webkit-box-shadow: 2px 2px 8px black;
+          box-shadow: 2px 2px 8px black;
   cursor: pointer;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition-duration: 400ms;
-          transition-duration: 400ms;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  opacity: 89%;
+}
+
+.nav__Line {
+  font-weight: lighter;
 }
 
 .nav__Container {
@@ -275,7 +359,7 @@ h3 {
           justify-content: center;
   -ms-flex-item-align: center;
       align-self: center;
-  width: 90%;
+  width: 100%;
 }
 
 ul {
@@ -285,7 +369,7 @@ ul {
 img {
   width: 340px;
   max-height: 100%;
-  height: 200px;
+  height: 220px;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
 }
@@ -340,6 +424,7 @@ figcaption {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: -30px;
 }
 
 figcaption > div {
@@ -352,6 +437,10 @@ figcaption > div {
   color: black;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.figcaption__mod {
+  margin-top: 0;
 }
 
 .captionLeft {
@@ -370,6 +459,21 @@ figcaption > div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.nouveau {
+  position: relative;
+  bottom: 180px;
+  left: 230px;
+  width: 80px;
+  text-align: center;
+  z-index: 3;
+  background-color: #99E2D0;
+  color: #28856e;
+  border: 0;
+  padding: 5px 10px;
+  font: bold;
+  text-shadow: 0px 2px 4px rgba(48, 161, 133, 0.3);
 }
 
 .imgArticle {
@@ -419,4 +523,111 @@ footer {
   color: white;
   padding: 0.3em 0;
   width: 70%;
+}
+
+a.mail {
+  color: white;
+  text-decoration: none;
+}
+
+/* Animation loading spinner */
+.loadingSpinner {
+  width: 100px;
+  height: 100px;
+  border: 12px solid #9356DC;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-radius: 50%;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+  -webkit-animation: spin linear 2s forwards, opacity1 0.4s forwards 2s;
+          animation: spin linear 2s forwards, opacity1 0.4s forwards 2s;
+}
+
+/* Page spinner */
+.wrapSpinner {
+  display: block;
+  background-color: whitesmoke;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
+  -webkit-animation: disparait 0s forwards 2s;
+          animation: disparait 0s forwards 2s;
+}
+
+@-webkit-keyframes opacity1 {
+  from {
+    opacity: 1;
+    display: block;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes opacity1 {
+  from {
+    opacity: 1;
+    display: block;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes disparait {
+  from {
+    width: 100%;
+    height: 100%;
+  }
+  to {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+}
+
+@keyframes disparait {
+  from {
+    width: 100%;
+    height: 100%;
+  }
+  to {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+}
+
+/* Loading Spinner */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
 }

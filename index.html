@@ -9,17 +9,20 @@
     	<script src="https://kit.fontawesome.com/0a01dc4da7.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <!-- LOADER & SPINNER-->
+        <div class="wrapSpinner"></div>
+        <div class="loadingSpinner"></div>
         <!-- HEADER -->
         <header>
             <img class="headerLogo" src="images/logo/ohmyfood@2x.svg" alt="ohmyfood">
         </header>
           <!-- Sous-en-tête -->
         <div class="sousheader">
-            <span id="sousheaderPlace"><i class="fas fa-map-marker-alt"></i>Paris, Belleville</span> 
+            <span id="sousheaderPlace"><i class="fas fa-map-marker-alt"></i>Paris, Belleville</span>
             <div class="sousheader__container">
                 <h3 class="sousheader__container--titre">Réservez le menu qui vous convient</h3>
                 <p class="sousheader-container__texte">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p> <br>
-                <p class="button">Explorez nos restaurants</p>
+                <a href="#Restaurants"><p class="button">Explorez nos restaurants</p></a>
             </div>
         </div>
 
@@ -41,63 +44,94 @@
 
         <!-- ARTICLE - Restaurants -->
         <article>
-            <h4 class="article-title">Restaurants</h4> <br>
-            <a href="pages/Menu_La_palette_du_goût.html" class="containers--restaurants">
+            <h4 class="article-title" id="Restaurants">Restaurants</h4> <br>
+
                 <figure>
-                    <img class="imgArticle" src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût Mélimontant" title="Nouveau">
+                    <a href="pages/Menu_La_palette_du_goût.html" class="containers--restaurants">
+                        <img class="imgArticle" src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût Mélimontant" title="Nouveau">
+                    </a>
+                    <div class="nouveau">Nouveau</div>
                         <figcaption>
                             <div class="captionLeft">
                                 <p>La palette du goût</p>
-                                <p class="nav__Line">Mélimontant</p>
+                                <p class="nav__Line">Ménilmontant</p>
                             </div>
                             <div class="captionRight">
-                                <i class="far fa-heart"></i>
+                                <div class="heart-wrapper">
+                                    <div class="heart-fill-hover">
+                                    <span class="icon-filled">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    </div>
+                                </div>
                             </div>
                         </figcaption>
                 </figure>
-            </a>
-            <a href="pages/Menu_La_note_enchantée.html" class="containers--restaurants">
                 <figure>
-                    <img class="imgArticle" src="images/restaurants/stil-u2Lp8tXIcjw-unsplashmobile.jpg" alt="La note enchantée Charonne" title="Nouveau">
+                    <a href="pages/Menu_La_note_enchantée.html" class="containers--restaurants">
+                        <img class="imgArticle" src="images/restaurants/stil-u2Lp8tXIcjw-unsplashmobile.jpg" alt="La note enchantée Charonne" title="Nouveau">
+                    </a>
+                    <div class="nouveau">Nouveau</div>
                         <figcaption>
                             <div class="captionLeft">
                                 <p>La note enchantée</p>
                                 <p class="nav__Line">Charonne</p>
                             </div>
                             <div class="captionRight">
-                                <i class="far fa-heart"></i>
+                                <div class="heart-wrapper">
+                                    <div class="heart-fill-hover">
+                                    <span class="icon-filled">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    </div>
+                                </div>
                             </div>
                         </figcaption>
                 </figure>
-            </a>
-            <a href="pages/Menu_À_la_française.html" class="containers--restaurants">
                 <figure>
-                    <img class="imgArticle" src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="à la française">
-                        <figcaption>
+                    <a href="pages/Menu_À_la_française.html" class="containers--restaurants">
+                        <img class="imgArticle" src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="à la française">
+                    </a>
+                        <figcaption class="figcaption__mod">
                             <div class="captionLeft">
                                 <p> A la francaise</p>
                                 <p class="nav__Line">Cité Rouge</p>
                             </div>
                             <div class="captionRight">
-                                <i class="far fa-heart"></i>
+                                <div class="heart-wrapper">
+                                    <div class="heart-fill-hover">
+                                    <span class="icon-filled">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    </div>
+                                </div>
                             </div>
                         </figcaption>
                 </figure>
-            </a>
-            <a href="pages/Menu_Le_délice_des_sens.html" class="containers--restaurants">
                 <figure>
-                    <img class="imgArticle" src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens">
-                        <figcaption>
+                    <a href="pages/Menu_Le_délice_des_sens.html" class="containers--restaurants">
+                        <img class="imgArticle" src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens">
+                    </a>
+                        <figcaption class="figcaption__mod">
                             <div class="captionLeft">
                                 <p> Le délice des sens</p>
                                 <p class="nav__Line">Folie-Méricourt</p>
                             </div>
                             <div class="captionRight">
-                                <i class="far fa-heart"></i>
+                                <div class="heart-wrapper">
+                                    <div class="heart-fill-hover">
+                                    <span class="icon-filled">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    </div>
+                                </div>
                             </div>
                         </figcaption>
                 </figure>
-            </a>            
         </article>
 
         <!-- FOOTER -->
@@ -109,7 +143,7 @@
                 <li class="elementListFooter"><a><i class="fas fa-utensils"></i> Proposer un restaurant</a></li>
                 <li class="elementListFooter"><a><i class="fas fa-hands-helping"></i>Devenir un partenaire</a></li>
                 <li class="elementListFooter"><a>Mentions légales</a></li>
-                <li class="elementListFooter"><a>Contact</a></li>
+                <li class="elementListFooter"><a class="mail" href="mailto:valentinfauveau28@gmail.com">Contact</a></li>
             </ul>
         </footer>
     </body>

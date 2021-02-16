@@ -1,0 +1,25 @@
+
+/* From 600px to 1048px */
+@media (min-width : 600px) and (max-width : 1048px){
+    img{width: 100%;
+ }
+}
+
+/* From 600px & onwards */
+@media (min-width : 600px) {
+    .nav__wrap__line{
+        width : 70%;
+    }
+    .nav__wrap__line > p {
+        padding-right: 20%;
+    }
+}
+
+@media (min-width : 1240px) {
+    body{
+
+        margin-top: 30px;
+    }
+    header{margin-bottom: 30px;}
+
+}

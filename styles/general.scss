@@ -43,6 +43,8 @@ header{@include flexcenter ;
     margin : 1em 0;
 }
     /* Sous-header */
+
+
 .fa-map-marker-alt{margin-right: 5px; color : rgba(17, 17, 19, 0.863)}
 #sousheaderPlace{
     @include flexcenter ;
@@ -52,7 +54,10 @@ header{@include flexcenter ;
     font-weight: bold;
     }
 
-.sousheader__container{background-color :$background-color ;padding-bottom: 2em;}
+.sousheader__container{background-color :$background-color ;padding-bottom: 2em;
+    box-shadow: 3px 7px 5px -4px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 3px 7px 5px -4px rgba(0,0,0,0.25);
+    -moz-box-shadow: 3px 7px 5px -4px rgba(0,0,0,0.25);}
 .sousheader__container--titre{font-family: $fontregular, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 display: flex ;
 flex-wrap: wrap;
@@ -62,16 +67,19 @@ text-align: center;
 padding-top:1em;
 margin-top: 0;}
 
-.sousheader-container__texte{@include flexcenter ;
-     flex-wrap : wrap;
+.sousheader-container__texte{
+    @include flexcenter ;
+    flex-wrap : wrap;
     padding : 0 2rem ;
     text-align: center;}
 
 /* Nav */
+
 nav{font-weight: bold;
 font-family: $fontregular;
 padding : 0 5% ;
-margin-bottom: 2em; }
+margin-bottom: 2em;
+ }
 
 .nav--title{font-family: $fontregular, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 text-align: left;
@@ -82,6 +90,7 @@ font-size : 24px ;}
 
 .wrap__elementsnav{display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 /* Elements du menu "Fonctionnement" */
@@ -123,8 +132,60 @@ font-size : 24px ;}
             color: black;
     }
 }
-.fa-heart{padding-right: 1em ; font-size: 20px ; color : rgba(17, 17, 19, 0.863);
+
+
+/* Icones Coeur & Fill */
+/* Animation remplissage du coeur on hover */
+.Article__titre__wrap{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
 }
+.heart-wrapper {
+    position: relative;
+    width: 16px;
+    &:hover{cursor: pointer;}
+    &:focus{cursor: pointer;}
+}
+
+.icon-filled {
+    padding: 0;
+    margin : 0 ;
+}
+.fa-heart {
+    background-color: $secondary-color;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    top: 1.6px;
+    left : 2px;
+    height: 0;
+    overflow: hidden;
+    z-index: 2;
+    transition: 0.5s ease-in-out;
+}
+.fa-heart-o{color: rgba(175, 173, 173, 0.822); text-shadow: 1px 2px 1px rgba(0,0,0,0.64); }
+.fa-heart-o::before{font-size: 24px; z-index: 3; position: relative;}
+.heart-wrapper .heart-fill-hover:hover .fa-heart {
+    height: 100%;
+    font-size: 22px;
+
+}
+.heart-wrapper .heart-fill-hover:focus .fa-heart {
+    height: 100%;
+    font-size: 22px;
+
+}
+.heart-fill-hover:hover .fa-heart-o{
+       color: $secondary-color;
+       transition: 0.5s ease-in-out;
+       font-size: 22px;
+    }
+
+.heart-wrapper{padding-right: 20px;}
+
 
 h3{
     @include flexcenter ;
@@ -134,34 +195,43 @@ h3{
     /* bouton */
 .button{
     @include flexcenter;
-    padding : 1.2em 0;
-    background-color : $secondary-color ;
+    padding : 1.2em 1em;
+    background-color : $primary-color ;
     border-radius: 10em;
     width :55%;
     margin-left : auto ;
     margin-right : auto ;
     font-weight: bold ;
     color : white ;
-    box-shadow: 1px 1px 6px rgb(255, 254, 254);
+    background: #ff79da;
+    background: linear-gradient(160deg,#ff79da 10%, #9356dc 90%);
+    background: -webkit-linear-gradient(160deg,#ff79da 10%, #9356dc 90%);
+    background: -moz-linear-gradient(160deg,#ff79da 10%, #9356dc 90%);
+    box-shadow:1px 1px 4px black;
         &:hover
-            {box-shadow: 2px 2px 6px black;
-            background-color: #fa7fd7;
+            {box-shadow: 2px 2px 8px black;
             cursor: pointer;
-            transform: scale(1.1);
-            transition-duration: 400ms;
+            transition-duration: 500ms;
+            opacity: 89%;
             }
         }
 
+.nav__Line{font-weight: lighter;
+}
+.nav__Container{
+    display : flex ;
+    justify-content : space-between ;
+    align-items : center ;
+}
 
-.nav__Container{display : flex ; justify-content : space-between ; align-items : center ;}
-.containers--restaurants{@include flexcenter; width: 90%;}
+.containers--restaurants{@include flexcenter; width: 100%; }
 ul{list-style:none;
 }
 
 img {
     width: 340px;
     max-height: 100%;
-    height: 200px;
+    height: 220px;
     border-top-left-radius:1em;
     border-top-right-radius: 1em;
 
@@ -179,7 +249,8 @@ background-color : $background-color;
 width: 100%;}
 
 .article-title{font-size : 24px ; padding-left: 5%;}
-figure{display : inline-block ;
+figure{
+display : inline-block ;
 margin-left: auto;
 margin-right: auto;
 background-color : white ;
@@ -187,7 +258,7 @@ border-radius: 1em ;
 box-shadow: 1px 1px 6px rgb(0, 0, 0);
 }
 
-figcaption{display: flex;}
+figcaption{display: flex; margin-top: -30px;}
 figcaption>div{font: 1em ;
     font-weight: bold;
     padding-left: 0.5em;
@@ -196,11 +267,28 @@ figcaption>div{font: 1em ;
     text-decoration: none;
     color: black;
     margin-top:0 ;
-    margin-bottom: 0;}
+    margin-bottom: 0;
+}
 
+.figcaption__mod{margin-top : 0;}
 .captionLeft{width: 80%; padding-top: 0;}
 .captionRight{width: 20%; display : flex ;justify-content: center; align-items: center;}
 
+.nouveau{
+    position: relative;
+    bottom : 180px ;
+    left : 230px ;
+    width : 80px ;
+    text-align: center;
+    z-index: 3;
+    background-color: $tertiary-color;
+    color: #28856e;
+    border: 0;
+    padding: 5px 10px;
+    font: bold;
+    text-shadow: 0px 2px 4px rgba(48,161,133,0.30);
+
+}
 .imgArticle{
     display : flex ;
     margin-left: auto;
@@ -230,10 +318,65 @@ footer{
     margin-right: 5px;}
 .fa-hands-helping{color: white;
     margin-right: 5px;}
-.listcontainerFooter{margin-bottom:0;
+
+.listcontainerFooter{
+    margin-bottom:0;
     padding-left : 10% ;
     padding-bottom: 5%;}
+
 .elementListFooter{
     color : white ;
     padding : 0.3em 0 ;
     width: 70%;}
+
+a.mail{color: white; text-decoration: none;}
+/* Animation loading spinner */
+.loadingSpinner{
+    width : 100px ;
+    height: 100px ;
+    border: 12px solid $primary-color;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-radius: 50%;
+    margin: auto;
+    position : absolute ;
+    left : 0 ; right : 0 ; top : 0 ; bottom : 0 ;
+    z-index: 5;
+    pointer-events: none;
+    animation: spin linear 2s forwards, opacity1 0.4s forwards 2s;
+}
+
+/* Page spinner */
+.wrapSpinner{
+    display : block ;
+    background-color: $background-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 4;
+    animation : disparait 0s forwards 2s;
+}
+
+
+@keyframes opacity1{
+    from {opacity: 1;
+        display: block;
+    }
+    to {opacity: 0;
+        display: none;}
+}
+
+@keyframes disparait {
+    from {width : 100% ; height : 100% ;}
+    to {width : 1px ; height : 1px; overflow : hidden ;}
+  }
+
+  /* Loading Spinner */
+@keyframes spin {
+    0% {transform: rotate(0deg);
+    }
+    100% {transform: rotate(1turn);
+    }
+}
