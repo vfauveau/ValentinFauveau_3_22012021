@@ -54,8 +54,8 @@ body {
           box-shadow: 2px 2px 8px black;
   background-color: #9356DC;
   cursor: pointer;
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
 }
 
 .imgArticle {
@@ -192,12 +192,10 @@ li:hover .Article__left__ligne {
 
 .Article__menu__titre {
   font-size: 22px;
-  font-weight: none;
+  font-weight: normal;
   opacity: 80%;
   margin-left: 20px;
-  -webkit-text-decoration: underline 3px solid #99E2D0;
-          text-decoration: underline 3px solid #99E2D0;
-  text-underline-position: under;
+  border-bottom: #99E2D0 3px solid;
 }
 
 .Article__left {
@@ -334,8 +332,8 @@ li:hover .Article__left__ligne {
 /* Elements liste */
 .list__element1 {
   opacity: 0;
-  -webkit-animation: apparition 2s forwards 2s;
-          animation: apparition 2s forwards 2s;
+  -webkit-animation: apparition 2s forwards 1s;
+          animation: apparition 2s forwards 1s;
 }
 
 .list__element2 {

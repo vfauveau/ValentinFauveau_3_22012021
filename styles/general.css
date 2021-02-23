@@ -38,6 +38,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: Roboto-Regular, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* Header */
 }
 
 header {
@@ -211,6 +212,11 @@ nav {
 
 /* Icones Coeur & Fill */
 /* Animation remplissage du coeur on hover */
+.articleHome-titleContainer {
+  display: inline-block;
+  width: 100%;
+}
+
 .Article__titre__wrap {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -243,8 +249,9 @@ nav {
 
 .fa-heart {
   background-color: #FF79DA;
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
   position: absolute;
   top: 1.6px;
@@ -257,13 +264,12 @@ nav {
 }
 
 .fa-heart-o {
-  color: rgba(175, 173, 173, 0.822);
-  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.64);
+  color: #555555;
 }
 
 .fa-heart-o::before {
   font-size: 24px;
-  z-index: 3;
+  z-index: 1;
   position: relative;
 }
 
@@ -437,6 +443,7 @@ figcaption > div {
   color: black;
   margin-top: 0;
   margin-bottom: 0;
+  font-family: Roboto-Regular;
 }
 
 .figcaption__mod {

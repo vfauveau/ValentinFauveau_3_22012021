@@ -1,39 +1,51 @@
 
-/* From 600px to 1048px */
-
 /* From 600px & onwards */
-@media (min-width : 600px) {
-    .nav__wrap__line{
-        width : 70%;
+@media (min-width: 600px) {
+    .nav__wrap__line {
+        width: 70%;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
     }
     .nav__wrap__line > p {
         padding-right: 20%;
     }
 }
-@media (min-width : 800px) and (max-width : 1048px){
-    figure{margin: 5%;}
-}
 
-@media (min-width : 1049px) {
-    .article-title{display: inline-block; align-items: left;}
-    article{
+
+@media (min-width: 1049px) {
+    .article-title {
+        display: inline-block;
+    }
+    article {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: flex-start;
     }
-.containers--restaurants{
-    display: flex;
-    flex-direction: row;
-
-}
-    .nav__wrap__line{width: 35%;
+    .containers--restaurants {
+        display: flex;
+        flex-direction: row;
     }
-    .wrap__elementsnav{
+    .nav__wrap__line {
+        width: 35%;
+    }
+    .wrap__elementsnav {
         justify-content: center;
         align-items: center;
         margin-left: auto;
-        margin-right: auto;}
-
+        margin-right: auto;
+    }
+    .listcontainerFooter {
+        display: flex;
+        justify-content: center;
+    }
+    .logoFooter {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2em;
+        padding-left: 0;
+        padding-right: 1%;
+    }
 }

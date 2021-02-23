@@ -29,8 +29,7 @@ html{margin-bottom : 0 ;}
 body{margin : 0 ;
     @include flexcenter;
     flex-direction: column;
-    font-family: $fontregular, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-
+    font-family: $fontregular, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* Header */
 }
 header{@include flexcenter ;
@@ -136,6 +135,10 @@ font-size : 24px ;}
 
 /* Icones Coeur & Fill */
 /* Animation remplissage du coeur on hover */
+.articleHome-titleContainer{
+    display: inline-block;
+    width: 100%;
+}
 .Article__titre__wrap{
     display: inline-flex;
     justify-content: space-between;
@@ -154,9 +157,9 @@ font-size : 24px ;}
 }
 .fa-heart {
     background-color: $secondary-color;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
     background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     -webkit-text-fill-color: transparent;
     position: absolute;
     top: 1.6px;
@@ -166,8 +169,8 @@ font-size : 24px ;}
     z-index: 2;
     transition: 0.5s ease-in-out;
 }
-.fa-heart-o{color: rgba(175, 173, 173, 0.822); text-shadow: 1px 2px 1px rgba(0,0,0,0.64); }
-.fa-heart-o::before{font-size: 24px; z-index: 3; position: relative;}
+.fa-heart-o{color: rgb(85, 85, 85); }
+.fa-heart-o::before{font-size: 24px; z-index: 1; position: relative;}
 .heart-wrapper .heart-fill-hover:hover .fa-heart {
     height: 100%;
     font-size: 22px;
@@ -259,7 +262,8 @@ box-shadow: 1px 1px 6px rgb(0, 0, 0);
 }
 
 figcaption{display: flex; margin-top: -30px;}
-figcaption>div{font: 1em ;
+figcaption>div{
+    font: 1em ;
     font-weight: bold;
     padding-left: 0.5em;
     padding-bottom: 0.4em;
@@ -268,6 +272,7 @@ figcaption>div{font: 1em ;
     color: black;
     margin-top:0 ;
     margin-bottom: 0;
+    font-family: $fontregular;
 }
 
 .figcaption__mod{margin-top : 0;}
