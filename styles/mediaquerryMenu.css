@@ -50,6 +50,8 @@
     .button--Order {
         width: 30%;
     }
+    .fa-heart{font-size: 22px; left : 32px;}
+    .fa-heart-o{font-size: 25px;}
     figure{margin: 5%;}
     .listcontainerFooter {
         display: flex;
@@ -66,4 +68,5 @@
         flex-direction: column;
     }
     .titreFooter{font-size: 25px;}
+    .elementListFooter{font-size: 20px;}
 }

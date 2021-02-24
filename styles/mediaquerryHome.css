@@ -41,11 +41,22 @@
         display: flex;
         justify-content: center;
     }
+    .button{width: 35%;}
     .logoFooter {
         display: flex;
         justify-content: center;
+        align-items: center;
         margin-bottom: 2em;
         padding-left: 0;
         padding-right: 1%;
+        flex-direction: column;
     }
+    .fa-heart{font-size: 23px;}
+    .fa-heart-o{font-size: 25px; position: relative; }
+    .heart-fill-hover{display: flex ; align-items: center; justify-content: center;
+        left : 0 ;
+    bottom :0  ;}
+
+    .titreFooter{font-size: 25px ;}
+    .elementListFooter{font-size: 20px;}
 }

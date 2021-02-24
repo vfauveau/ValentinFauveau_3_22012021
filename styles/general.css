@@ -1,6 +1,9 @@
 @font-face {
   font-family: Roboto-Regular;
   src: url(Roboto-Regular.ttf);
+}
+
+@font-face {
   font-family: Shrikhand-Regular;
   src: url(Shrikhand-Regular.ttf);
 }
@@ -11,7 +14,7 @@ ul {
 }
 
 p {
-  font-family: Roboto-Regular, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Roboto-Regular;
   margin: 0.5em 0;
 }
 
@@ -210,8 +213,6 @@ nav {
   color: black;
 }
 
-/* Icones Coeur & Fill */
-/* Animation remplissage du coeur on hover */
 .articleHome-titleContainer {
   display: inline-block;
   width: 100%;
@@ -229,69 +230,59 @@ nav {
           align-items: center;
 }
 
-.heart-wrapper {
+/* Animation Coeur qui se remplit */
+.fa-heart {
+  font-size: 20px;
   position: relative;
-  width: 16px;
-}
-
-.heart-wrapper:hover {
-  cursor: pointer;
-}
-
-.heart-wrapper:focus {
-  cursor: pointer;
+  left: 29px;
+  bottom: 5px;
+  opacity: 0;
+  -webkit-transition: 3s;
+  transition: 3s;
+  z-index: 1;
 }
 
 .icon-filled {
-  padding: 0;
-  margin: 0;
+  padding-right: 15px;
 }
 
-.fa-heart {
-  background-color: #FF79DA;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  position: absolute;
-  top: 1.6px;
-  left: 2px;
-  height: 0;
+.icon-filled:hover .fa-heart {
+  cursor: pointer;
+  -webkit-animation: opacityheart 2s forwards;
+          animation: opacityheart 2s forwards;
   overflow: hidden;
-  z-index: 2;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .fa-heart-o {
-  color: #555555;
-}
-
-.fa-heart-o::before {
-  font-size: 24px;
-  z-index: 1;
+  font-size: 21px;
+  color: grey;
   position: relative;
+  right: 10px;
+  bottom: 7px;
 }
 
-.heart-wrapper .heart-fill-hover:hover .fa-heart {
-  height: 100%;
-  font-size: 22px;
+@-webkit-keyframes opacityheart {
+  from {
+    opacity: 0;
+    color: #FF79DA;
+  }
+  to {
+    opacity: 100%;
+    color: #9356DC;
+  }
 }
 
-.heart-wrapper .heart-fill-hover:focus .fa-heart {
-  height: 100%;
-  font-size: 22px;
-}
-
-.heart-fill-hover:hover .fa-heart-o {
-  color: #FF79DA;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  font-size: 22px;
-}
-
-.heart-wrapper {
-  padding-right: 20px;
+@keyframes opacityheart {
+  from {
+    opacity: 0;
+    color: #FF79DA;
+  }
+  to {
+    opacity: 100%;
+    color: #9356DC;
+  }
 }
 
 h3 {
