@@ -157,7 +157,16 @@ font-size : 24px ;}
   .icon-filled{
       padding-right: 15px ;
   }
-  .icon-filled:hover {
+  .icon-filled:hover{
+    & .fa-heart{
+      cursor : pointer ;
+      animation : opacityheart 2s forwards ;
+      overflow : hidden ;
+      transition : 2s ;
+      }
+  }
+
+  .icon-filled:active {
     & .fa-heart{
       cursor : pointer ;
       animation : opacityheart 2s forwards ;

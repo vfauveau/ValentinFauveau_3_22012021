@@ -260,6 +260,15 @@ nav {
   transition: 2s;
 }
 
+.icon-filled:active .fa-heart {
+  cursor: pointer;
+  -webkit-animation: opacityheart 2s forwards;
+          animation: opacityheart 2s forwards;
+  overflow: hidden;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
 .fa-heart-o {
   font-size: 21px;
   color: grey;
