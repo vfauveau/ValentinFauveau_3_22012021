@@ -77,6 +77,12 @@ article{@include flexcenter ;
 }
 
 
+.heart-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
 
 .fa-check-circle{color : white;
     background-color :  $tertiary-color ;

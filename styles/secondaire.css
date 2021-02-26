@@ -114,6 +114,19 @@ article.Article__container {
   border-top-right-radius: 0;
 }
 
+.heart-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 10px;
+}
+
 .fa-check-circle {
   color: white;
   background-color: #99E2D0;

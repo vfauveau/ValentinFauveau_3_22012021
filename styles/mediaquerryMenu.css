@@ -50,7 +50,7 @@
     .button--Order {
         width: 30%;
     }
-    .fa-heart{font-size: 22px; left : 32px;}
+    .fa-heart{font-size: 22px; left : 32px; bottom: 5px;}
     .fa-heart-o{font-size: 25px;}
     figure{margin: 5%;}
     .listcontainerFooter {
