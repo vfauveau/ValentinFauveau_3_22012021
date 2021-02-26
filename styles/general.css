@@ -86,7 +86,7 @@ header {
 }
 
 .sousheader__container {
-  background-color: whitesmoke;
+  background-color: #f8f8f8;
   padding-bottom: 2em;
   box-shadow: 3px 7px 5px -4px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 3px 7px 5px -4px rgba(0, 0, 0, 0.25);
@@ -202,7 +202,11 @@ nav {
   height: 12px;
   padding: 10px;
   text-align: center;
-  font: 14px Roboto-Regular bold;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Roboto-Regular';
 }
 
 .nav__wrap__line i {
@@ -211,11 +215,6 @@ nav {
 
 .nav__wrap__line p {
   color: black;
-}
-
-.numeros {
-  font-family: Roboto-Regular;
-  font-weight: bold;
 }
 
 .articleHome-titleContainer {
@@ -412,7 +411,7 @@ article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: whitesmoke;
+  background-color: #f8f8f8;
   width: 100%;
 }
 
@@ -427,8 +426,9 @@ figure {
   margin-right: auto;
   background-color: white;
   border-radius: 1em;
-  -webkit-box-shadow: 1px 1px 6px black;
-          box-shadow: 1px 1px 6px black;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.24);
 }
 
 figcaption {
