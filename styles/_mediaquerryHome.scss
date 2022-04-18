@@ -1,6 +1,6 @@
 
 /* From 600px & onwards */
-@media (min-width: 600px) {
+@media (max-width: 600px) {
     .nav__wrap__line {
         width: 70%;
         align-items: center;
@@ -10,19 +10,14 @@
     .nav__wrap__line > p {
         padding-right: 20%;
     }
+    .button{width: 70%;}
 }
 
 
-@media (min-width: 1049px) {
+@media (max-width: 1049px) {
+    .button{width: 60%;}
     .article-title {
         display: inline-block;
-    }
-    article {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: flex-start;
     }
     .containers--restaurants {
         display: flex;
@@ -41,7 +36,6 @@
         display: flex;
         justify-content: center;
     }
-    .button{width: 35%;}
     .logoFooter {
         display: flex;
         justify-content: center;
